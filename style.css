@@ -3,15 +3,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light grey background for a softer look */
     line-height: 1.6;
-    color: #333;
+    color: #333; /* Darker text color for better readability */
 }
 
 header {
-    background-color: #4a4a4a;
+    background-color: #4a4a4a; /* Dark gray for a modern feel */
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -22,135 +22,146 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Hero Section */
+nav ul li a:hover {
+    color: #ff9800; /* Orange accent on hover */
+}
+
 .hero {
-    background-color: #ff9800;
+    background-color: #ff9800; /* Bright orange for the hero section */
     color: white;
-    padding: 60px 20px; /* Reduced padding for mobile */
+    padding: 80px 20px;
     text-align: center;
+    border-bottom: 4px solid #4a4a4a; /* Dark gray border for contrast */
 }
 
-/* Product Section */
-.products-section {
-    padding: 20px;
-    background-color: #4a4a4a;
+.hero .cta-button {
+    background-color: #333; /* Dark button color */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .cta-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+.products-section, .recipes-section, .home-kitchen-influence {
+    padding: 20px; /* Adjusted padding for better spacing */
+    background-color: #4a4a4a; /* Darker gray for product section */
     margin: 20px auto;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
     max-width: 1200px;
-    color: #fff;
+    color: #fff; /* Light text color for contrast */
 }
 
-/* Flex display for products */
-.product {
+.product, .recipe {
     display: flex;
-    flex-direction: column; /* Stack product items vertically */
-    align-items: center; /* Center align */
+    flex-direction: column; /* Changed to column for better stacking on smaller screens */
+    align-items: center; /* Centered content */
     margin-bottom: 40px;
-    text-align: center; /* Center text */
 }
 
-.product img {
-    max-width: 100%; /* Responsive images */
-    height: auto; /* Maintain aspect ratio */
+.product img, .recipe img {
+    max-width: 100%; /* Responsive image width */
+    height: auto;
     border-radius: 5px;
-    margin-bottom: 10px; /* Space between image and details */
+    margin-bottom: 20px; /* Adjusted margin for vertical spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding transitions for effects */
+    border: 2px solid #fff; /* White border for contrast */
 }
 
-.product-details {
-    padding: 10px; /* Consistent padding */
+.product img:hover, .recipe img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-.product h3 {
-    margin: 10px 0;
+.product-details, .recipe-details {
+    flex: 1;
+    text-align: center; /* Centering text for smaller screens */
 }
 
-.buy-button,
-.view-recipe-button,
-.explore-button {
-    background-color: #ff9800;
-    color: #fff;
-    border: none;
+.product-details h3, .recipe-details h3 {
+    margin: 0 0 10px;
+    font-size: 1.4em;
+    color: #ff9800; /* Bright color for headings */
+}
+
+.product-details ul, .recipe-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.product-details p, .recipe-details p {
+    margin: 0 0 15px;
+}
+
+.buy-button, .view-recipe-button {
+    background-color: #ff9800; /* Orange for buy/view buttons */
+    color: white;
     padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
     text-decoration: none;
-}
-
-/* Recipe Section */
-.recipes-section {
-    padding: 20px;
-    text-align: center;
-}
-
-.recipe {
-    margin: 20px;
-}
-
-.recipe img {
-    max-width: 100%; /* Responsive images */
-    height: auto; /* Maintain aspect ratio */
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.recipe-details {
-    padding: 10px;
+.buy-button:hover, .view-recipe-button:hover {
+    background-color: #e68a00; /* Darker orange on hover */
 }
 
-/* Footer */
+.home-kitchen-influence {
+    text-align: center; /* Centering text for emphasis */
+}
+
+.explore-button {
+    background-color: #ff9800; /* Matching orange for consistency */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #e68a00; /* Darker orange on hover */
+}
+
 footer {
-    background-color: #4a4a4a;
+    background-color: #4a4a4a; /* Dark gray footer */
     color: #fff;
     text-align: center;
-    padding: 20px 10px;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block; /* Stack navigation items */
-        margin: 5px 0; /* More spacing between items */
+/* Responsive styles */
+@media (min-width: 768px) {
+    .product, .recipe {
+        flex-direction: row; /* Change to row for larger screens */
+        align-items: flex-start; /* Align items at the start for row layout */
     }
 
-    .hero {
-        padding: 40px 10px; /* Less padding for mobile */
+    .product img, .recipe img {
+        max-width: 200px; /* Set max width for images on larger screens */
+        margin-bottom: 0; /* Remove bottom margin for row layout */
+        margin-right: 20px; /* Add right margin for spacing */
     }
 
-    .product {
-        width: 90%; /* Full width on mobile */
-        margin: 0 auto; /* Center product */
-    }
-
-    .products-section {
-        padding: 10px; /* Less padding for mobile */
-    }
-
-    .buy-button, .view-recipe-button, .explore-button {
-        width: 100%; /* Full-width buttons on mobile */
-        margin-top: 10px; /* Space between buttons */
-    }
-
-    footer {
-        padding: 15px 5px; /* Less padding for mobile */
-    }
-}
-
-@media (min-width: 769px) {
-    .product {
-        flex-direction: row; /* Display side by side on larger screens */
-        align-items: flex-start; /* Align items at the top */
-    }
-
-    .product img {
-        width: 300px; /* Fixed width for desktop */
-        margin-right: 20px; /* Space between image and details */
+    .product-details, .recipe-details {
+        text-align: left; /* Left-align text on larger screens */
     }
 }
